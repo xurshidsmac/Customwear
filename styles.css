@@ -156,6 +156,7 @@ body.no-scroll { overflow: hidden; }
   transform: translateY(-8%);
   opacity: 0;
   transition: transform .25s ease, opacity .25s ease;
+  justify-items: center;
 }
 .mnav.open .mnav__panel{
   transform: translateY(0);
@@ -198,9 +199,9 @@ body.no-scroll { overflow: hidden; }
   justify-content: center;
   gap: 12px;
   padding: 24px 18px 40px;
-  width: 100%;
-  background: #97a87af5;
+  background: #97a87ae2;
   max-width: 560px;
+  min-width: 300px;
   border-radius: 20px;
   box-shadow: 0 16px 48px rgba(0,0,0,.18);
   backdrop-filter: blur(6px) saturate(120%);
