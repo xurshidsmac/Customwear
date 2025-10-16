@@ -89,3 +89,59 @@ if (burger && mnav){
     if (e.target.closest('.mnav__link, .mnav__cta')) closeMenu();
   });
 }
+
+
+// ===== REVEAL ON SCROLL =====
+(() => {
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (prefersReduced || !('IntersectionObserver' in window)) {
+    document.querySelectorAll('.reveal,[data-reveal-children]').forEach(el => el.classList.add('is-inview'));
+    return;
+  }
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+
+      const el = entry.target;
+      el.classList.add('is-inview');
+
+      // Если это контейнер — даём стеггер детям
+      if (el.hasAttribute('data-reveal-children')) {
+        const kids = Array.from(el.children);
+        kids.forEach((child, i) => {
+          child.style.setProperty('--reveal-delay', `${i * 90}ms`);
+        });
+      }
+
+      io.unobserve(el);
+    });
+  }, { rootMargin: '0px 0px -10% 0px', threshold: 0.08 });
+
+  document.querySelectorAll('.reveal,[data-reveal-children]').forEach(el => io.observe(el));
+})();
+// ===== FOOTER helpers =====
+(() => {
+  // Текущий год
+  const y = document.getElementById('year');
+  if (y) y.textContent = new Date().getFullYear();
+
+  // Простая обработка подписки (без бэкенда)
+  const form = document.getElementById('fnews');
+  const input = document.getElementById('fnews-email');
+  const hint = document.getElementById('fnews-hint');
+
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!input?.value || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value)) {
+      hint.textContent = 'Проверьте email.';
+      hint.style.color = '#b00020';
+      input?.focus();
+      return;
+    }
+    hint.textContent = 'Спасибо! Мы написали вам письмо-подтверждение.';
+    hint.style.color = 'var(--muted)';
+    form.reset();
+  });
+})();
