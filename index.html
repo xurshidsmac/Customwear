@@ -18,24 +18,24 @@
   <header class="xnav" role="banner" aria-label="Главная навигация">
     <div class="xnav__in">
       <!-- ЛОГО -->
-      <a href="/" class="xnav__brand" aria-label="CustomWear — на главную">
+      <a href="/" class="xnav__brand reveal" data-reveal="down" aria-label="CustomWear — на главную">
         <span class="xnav__mark">CW</span>
         <span class="xnav__name">CustomWear</span>
       </a>
 
       <!-- НАВИГАЦИЯ (десктоп) -->
-      <nav class="xnav__menu" aria-label="Разделы сайта">
-        <a href="#about" class="xnav__link">О продукте</a>
-        <a href="#builder" class="xnav__link">Конструктор</a>
-        <a href="#gallery" class="xnav__link">Галерея</a>
-        <a href="#contacts" class="xnav__link">Контакты</a>
+      <nav class="xnav__menu reveal" data-reveal="down" aria-label="Разделы сайта" style="--reveal-delay: 60ms">
+        <a href="#about"   class="xnav__link" style="--reveal-delay: 0ms">О продукте</a>
+        <a href="#builder" class="xnav__link" style="--reveal-delay: 60ms">Конструктор</a>
+        <a href="#gallery" class="xnav__link" style="--reveal-delay: 120ms">Галерея</a>
+        <a href="#contacts"class="xnav__link" style="--reveal-delay: 180ms">Контакты</a>
       </nav>
 
       <!-- CTA -->
-      <a href="#builder" class="xnav__cta">Создать дизайн</a>
+      <a href="#builder" class="xnav__cta reveal" data-reveal="left" style="--reveal-delay: 120ms">Создать дизайн</a>
 
       <!-- БУРГЕР (кнопка) -->
-      <button id="burgerBtn" class="xnav__burger" aria-label="Открыть меню" aria-controls="mnav" aria-expanded="false">
+      <button id="burgerBtn" class="xnav__burger reveal" data-reveal="left" style="--reveal-delay: 160ms" aria-label="Открыть меню" aria-controls="mnav" aria-expanded="false">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
@@ -58,74 +58,368 @@
         </div>
 
         <div class="mnav__body">
-          <a href="#about" class="mnav__link">О продукте</a>
+          <a href="#about"   class="mnav__link">О продукте</a>
           <a href="#builder" class="mnav__link">Конструктор</a>
           <a href="#gallery" class="mnav__link">Галерея</a>
-          <a href="#contacts" class="mnav__link">Контакты</a>
+          <a href="#contacts"class="mnav__link">Контакты</a>
           <a href="#builder" class="mnav__cta">Создать дизайн</a>
         </div>
       </div>
     </nav>
   </header>
 
-  <!-- ================= MAIN ================= -->
-  <main id="main">
-    <!-- Hero-заглушка (добавим позже отдельной частью) -->
-    <section id="hero" style="min-height:56vh; display:grid; place-items:center; padding:48px 18px;">
-      <div style="max-width:960px; text-align:center;">
-        <h1 style="margin:0 0 12px; font-size:clamp(28px,4vw,44px); line-height:1.15;">Создай то, что хочешь носить</h1>
-        <p style="margin:0 0 18px; font-size:clamp(16px,2vw,18px); opacity:.8;">Печать премиум-качества на футболках и худи. Просто. Красиво. Локальное производство.</p>
-        <a class="xnav__cta" href="#builder">Начать</a>
-      </div>
-    </section>
+  <!-- ================= HERO ================= -->
+  <section id="hero" class="hero" aria-label="Главный экран">
+    <div class="hero__in">
+      <div class="hero__text">
+        <h1 class="hero__title reveal" data-reveal="up">Создай то, что хочешь носить</h1>
+        <p class="hero__subtitle reveal" data-reveal="up" style="--reveal-delay: 90ms">
+          Печать премиум-качества на футболках и худи. Просто. Красиво. Локальное производство.
+        </p>
 
-    <!-- Разделы-заглушки, чтобы проверить навигацию -->
-    <section id="about" style="padding:80px 18px;">
-      <div style="max-width:1100px; margin:0 auto;">
-        <h2 style="margin:0 0 16px;">О продукте</h2>
-        <p>Короткое описание преимуществ. Этот блок заменим полноценной секцией позже.</p>
-      </div>
-    </section>
+        <div class="hero__actions" data-reveal-children>
+          <a href="#builder" class="btn btn--primary">Открыть конструктор</a>
+          <a href="#gallery" class="btn btn--ghost">Смотреть галерею</a>
+        </div>
 
-    <section id="builder" style="padding:80px 18px;">
-      <div style="max-width:1100px; margin:0 auto;">
-        <h2 style="margin:0 16px 16px 0;">Конструктор</h2>
-        <p>Здесь будет интерактивный превью/видео-демо и кнопка перехода в конструктор.</p>
-      </div>
-    </section>
-
-    <section id="gallery" style="padding:80px 18px;">
-      <div style="max-width:1100px; margin:0 auto;">
-        <h2 style="margin:0 0 16px;">Галерея</h2>
-        <p>Сетка работ клиентов/превью принтов. Секция будет оформлена отдельными стилями.</p>
-      </div>
-    </section>
-
-    <section id="contacts" style="padding:80px 18px;">
-      <div style="max-width:1100px; margin:0 auto;">
-        <h2 style="margin:0 0 16px;">Контакты</h2>
-        <ul style="list-style:none; padding:0; margin:0;">
-          <li>Email: <a href="mailto:hello@customwear.uz">hello@customwear.uz</a></li>
-          <li>Telegram: <a href="https://t.me/customwear" target="_blank" rel="noopener">t.me/customwear</a></li>
-          <li>Instagram: <a href="#" target="_blank" rel="noopener">@customwear</a></li>
+        <ul class="hero__bullets" aria-label="Преимущества" data-reveal-children>
+          <li>Точные зоны печати</li>
+          <li>Собственный контроль качества</li>
+          <li>Доставка по Узбекистану</li>
         </ul>
       </div>
-    </section>
-  </main>
 
-  <!-- ================= FOOTER ================= -->
-  <footer style="padding:28px 18px; border-top:1px solid rgba(0,0,0,.06);">
-    <div style="max-width:1100px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;">
-      <span>&copy; <span id="y"></span> CustomWear</span>
-      <nav aria-label="Политики">
-        <a href="#" style="margin-right:12px; text-decoration:none;">Политика конфиденциальности</a>
-        <a href="#" style="text-decoration:none;">Условия сервиса</a>
-      </nav>
+      <!-- Иллюстрация -->
+      <div class="hero__art reveal" data-reveal="zoom" style="--reveal-delay: 140ms" aria-hidden="true">
+        <div class="hero__blob"></div>
+        <div class="hero_tee">
+          <img class="green-polo" src="polo.png" alt="">
+        </div>
+      </div>
     </div>
-    <script>
-      document.getElementById('y').textContent = new Date().getFullYear();
-    </script>
-  </footer>
+  </section>
+
+  <!-- ================ STRIP / NUMBERS ================= -->
+  <section class="strip" aria-label="Ключевые пункты">
+    <div class="strip__in">
+      <span class="strip__line reveal" data-reveal="fade"></span>
+
+      <ol class="strip__list" data-reveal-children>
+        <li class="strip__item">
+          <span class="strip__num">01</span>
+          <span class="strip__text">текст 1</span>
+        </li>
+        <li class="strip__item">
+          <span class="strip__num">02</span>
+          <span class="strip__text">текст 2</span>
+        </li>
+        <li class="strip__item">
+          <span class="strip__num">03</span>
+          <span class="strip__text">текст 3</span>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ================ BENEFITS / ПОЧЕМУ CUSTOMWEAR ================= -->
+  <section id="about" class="benefits" aria-label="Почему CustomWear">
+    <div class="benefits__in">
+      <header class="benefits__head">
+        <h2 class="benefits__title reveal" data-reveal="up">Почему CustomWear</h2>
+        <p class="benefits__subtitle reveal" data-reveal="up" style="--reveal-delay: 80ms">
+          Качество, скорость и прозрачность на каждом шаге
+        </p>
+      </header>
+
+      <div class="benefits__grid" data-reveal-children>
+        <article class="benefit">
+          <div class="benefit__icon" aria-hidden="true">
+            <!-- Печать премиум -->
+            <svg viewBox="0 0 24 24"><path d="M7 7V4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v3h1a3 3 0 0 1 3 3v4h-4v4H6v-4H2v-4a3 3 0 0 1 3-3h2Zm2-3h6v3H9V4Zm9 10H6v2h12v-2Z"/></svg>
+          </div>
+          <h3 class="benefit__title">Премиум-печать</h3>
+          <p class="benefit__text">Чёткие края, насыщенный цвет и долговечность принтов.</p>
+        </article>
+
+        <article class="benefit">
+          <div class="benefit__icon" aria-hidden="true">
+            <!-- Зоны печати -->
+            <svg viewBox="0 0 24 24"><path d="M4 4h16v16H4V4Zm3 3v10h10V7H7Z"/></svg>
+          </div>
+          <h3 class="benefit__title">Точные зоны</h3>
+          <p class="benefit__text">Контроль области печати до миллиметра — как в превью.</p>
+        </article>
+
+        <article class="benefit">
+          <div class="benefit__icon" aria-hidden="true">
+            <!-- Локальное производство -->
+            <svg viewBox="0 0 24 24"><path d="M3 10 12 4l9 6v9H3v-9Zm4 1v7h10v-7l-5-3-5 3Z"/></svg>
+          </div>
+          <h3 class="benefit__title">Локальное производство</h3>
+          <p class="benefit__text">Делаем здесь, в Узбекистане — быстро и без лишней логистики.</p>
+        </article>
+
+        <article class="benefit">
+          <div class="benefit__icon" aria-hidden="true">
+            <!-- Доставка -->
+            <svg viewBox="0 0 24 24"><path d="M3 6h11v5h2l3 3v4h-2a2 2 0 1 1-4 0H9a2 2 0 1 1-4 0H3V6Zm11 9h4v-1.586L16.586 11H14v4Z"/></svg>
+          </div>
+          <h3 class="benefit__title">Быстрая доставка</h3>
+          <p class="benefit__text">По всей стране. От заказа до двери — без лишней возни.</p>
+        </article>
+      </div>
+
+      <div class="benefits__cta" data-reveal-children>
+        <a class="btn btn--primary">Открыть конструктор</a>
+        <a class="btn btn--ghost">Смотреть галерею</a>
+      </div>
+    </div>
+  </section>
+  <!-- ================ WORKS / GALLERY ================= -->
+<section id="gallery" class="works" aria-label="Наши работы">
+  <div class="works__in">
+    <header class="works__head">
+      <h2 class="works__title reveal" data-reveal="up">Наши работы</h2>
+      <p class="works__subtitle reveal" data-reveal="up" style="--reveal-delay: 80ms">
+        Свежие принты и макеты CustomWear
+      </p>
+    </header>
+
+    <ul class="works__grid" data-reveal-children>
+      <!-- item 1 -->
+      <li class="work">
+        <figure class="work__card" data-index="0" data-caption="Работа #1 — CustomWear">
+          <img
+            src="example_1.png"
+            alt="Работа #1 — принт на футболке"
+            width="1024" height="1024"
+            loading="lazy" decoding="async"
+            sizes="(max-width:560px) 100vw, (max-width:1024px) 50vw, 33vw">
+          <figcaption class="work__overlay">
+            <div class="work__meta">
+              <span class="work__title">Работа #1</span>
+              <span class="work__desc">футболка • хлопок 100%</span>
+            </div>
+            <a class="work__btn" href="#product-1" data-skip-lightbox>Перейти к товару</a>
+          </figcaption>
+        </figure>
+      </li>
+
+      <!-- item 2 -->
+      <li class="work">
+        <figure class="work__card" data-index="1" data-caption="Работа #2 — CustomWear">
+          <img src="example_2.png" alt="Работа #2 — принт на худи"
+               width="1024" height="1024" loading="lazy" decoding="async"
+               sizes="(max-width:560px) 100vw, (max-width:1024px) 50vw, 33vw">
+          <figcaption class="work__overlay">
+            <div class="work__meta">
+              <span class="work__title">Работа #2</span>
+              <span class="work__desc">худи • oversize</span>
+            </div>
+            <a class="work__btn" href="#product-2" data-skip-lightbox>Перейти к товару</a>
+          </figcaption>
+        </figure>
+      </li>
+
+      <!-- item 3 -->
+      <li class="work">
+        <figure class="work__card" data-index="2" data-caption="Работа #3 — CustomWear">
+          <img src="example_1.png" alt="Работа #3 — принт на свитшоте"
+               width="1024" height="1024" loading="lazy" decoding="async"
+               sizes="(max-width:560px) 100vw, (max-width:1024px) 50vw, 33vw">
+          <figcaption class="work__overlay">
+            <div class="work__meta">
+              <span class="work__title">Работа #3</span>
+              <span class="work__desc">свитшот • унисекс</span>
+            </div>
+            <a class="work__btn" href="#product-3" data-skip-lightbox>Перейти к товару</a>
+          </figcaption>
+        </figure>
+      </li>
+
+      <!-- item 4 -->
+      <li class="work">
+        <figure class="work__card" data-index="3" data-caption="Работа #4 — CustomWear">
+          <img src="example_2.png" alt="Работа #4 — минималистичный принт"
+               width="1024" height="1024" loading="lazy" decoding="async"
+               sizes="(max-width:560px) 100vw, (max-width:1024px) 50vw, 33vw">
+          <figcaption class="work__overlay">
+            <div class="work__meta">
+              <span class="work__title">Работа #4</span>
+              <span class="work__desc">футболка • slim</span>
+            </div>
+            <a class="work__btn" href="#product-4" data-skip-lightbox>Перейти к товару</a>
+          </figcaption>
+        </figure>
+      </li>
+
+      <!-- item 5 -->
+      <li class="work">
+        <figure class="work__card" data-index="4" data-caption="Работа #5 — CustomWear">
+          <img src="example_1.png" alt="Работа #5 — яркий принт"
+               width="1024" height="1024" loading="lazy" decoding="async"
+               sizes="(max-width:560px) 100vw, (max-width:1024px) 50vw, 33vw">
+          <figcaption class="work__overlay">
+            <div class="work__meta">
+              <span class="work__title">Работа #5</span>
+              <span class="work__desc">футболка • regular</span>
+            </div>
+            <a class="work__btn" href="#product-5" data-skip-lightbox>Перейти к товару</a>
+          </figcaption>
+        </figure>
+      </li>
+
+      <!-- item 6 -->
+      <li class="work">
+        <figure class="work__card" data-index="5" data-caption="Работа #6 — CustomWear">
+          <img src="example_2.png" alt="Работа #6 — градиентный принт"
+               width="1024" height="1024" loading="lazy" decoding="async"
+               sizes="(max-width:560px) 100vw, (max-width:1024px) 50vw, 33vw">
+          <figcaption class="work__overlay">
+            <div class="work__meta">
+              <span class="work__title">Работа #6</span>
+              <span class="work__desc">худи • унисекс</span>
+            </div>
+            <a class="work__btn" href="#product-6" data-skip-lightbox>Перейти к товару</a>
+          </figcaption>
+        </figure>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- LIGHTBOX (без изменений интерфейса) -->
+<div id="lightbox" class="lightbox" hidden>
+  <div class="lightbox__backdrop" data-close></div>
+
+  <figure class="lightbox__figure" role="dialog" aria-modal="true" aria-label="Просмотр работы">
+    <img class="lightbox__img" src="" alt="">
+    <figcaption class="lightbox__caption"></figcaption>
+
+    <button class="lightbox__close" data-close aria-label="Закрыть (Esc)"></button>
+    <button class="lightbox__prev" aria-label="Предыдущая (←)"></button>
+    <button class="lightbox__next" aria-label="Следующая (→)"></button>
+  </figure>
+</div>
+<!-- ================ PROCESS / КАК ПРОХОДИТ ЗАКАЗ ================= -->
+<section id="process" class="process" aria-label="Как проходит заказ">
+  <div class="process__in">
+    <header class="process__head">
+      <h2 class="process__title reveal" data-reveal="up">Как проходит заказ</h2>
+      <p class="process__subtitle reveal" data-reveal="up" style="--reveal-delay:80ms">
+        Чётко и прозрачно — от макета до доставки
+      </p>
+    </header>
+
+    <ol class="steps" data-reveal-children>
+      <!-- 1 -->
+      <li class="step">
+        <div class="step__icon" aria-hidden="true">1</div>
+        <div class="step__body">
+          <h3 class="step__title">Вы создаёте макет</h3>
+          <p class="step__text">Загрузите изображение в конструктор или добавьте текст/логотип.</p>
+        </div>
+      </li>
+      <!-- 2 -->
+      <li class="step">
+        <div class="step__icon" aria-hidden="true">2</div>
+        <div class="step__body">
+          <h3 class="step__title">Мы получаем макет</h3>
+          <p class="step__text">Проверяем качество, зону печати и подтверждаем с вами детали.</p>
+        </div>
+      </li>
+      <!-- 3 -->
+      <li class="step">
+        <div class="step__icon" aria-hidden="true">3</div>
+        <div class="step__body">
+          <h3 class="step__title">Производство 1–3 дня</h3>
+          <p class="step__text">Запускаем печать и сборку. Средний срок готовности — <strong>1–3 дня</strong>.</p>
+        </div>
+      </li>
+      <!-- 4 -->
+      <li class="step">
+        <div class="step__icon" aria-hidden="true">4</div>
+        <div class="step__body">
+          <h3 class="step__title">Свяжемся и отправим</h3>
+          <p class="step__text">Сообщаем о готовности и отправляем заказ удобной для вас службой.</p>
+        </div>
+      </li>
+    </ol>
+
+    <div class="process__cta reveal" data-reveal="up" style="--reveal-delay:120ms">
+      <a class="btn btn--primary" href="#builder">Создать макет</a>
+      <a class="btn btn--ghost" href="#contacts">Связаться</a>
+    </div>
+  </div>
+</section>
+<!-- ================ FOOTER ================= -->
+<footer class="footer" aria-label="Футер">
+  <div class="footer__in">
+    <div class="footer__top">
+      <!-- Бренд -->
+      <div class="fbrand reveal" data-reveal="up">
+        <a href="/" class="xnav__brand" aria-label="CustomWear — на главную">
+          <span class="xnav__mark">CW</span>
+          <span class="xnav__name">CustomWear</span>
+        </a>
+        <p class="fbrand__text">
+          Создаём вещи, которые хочется носить. Локальное производство и внимательность к деталям.
+        </p>
+        <div class="fsocial" aria-label="Социальные сети">
+          <a href="https://t.me/customwear"   target="_blank" rel="noopener" aria-label="Telegram" class="fsocial__link">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.9 15.7 9.8 19c.4 0 .6-.2.8-.4l1.9-1.8 3.9 2.8c.7.4 1.2.2 1.4-.7l2.6-12.2c.2-.9-.3-1.3-1.1-1L3.7 9.5c-.9.3-.9.8-.2 1l4.8 1.5 11.1-6.9-9.5 8.6Z"/></svg>
+          </a>
+          <a href="https://instagram.com/"     target="_blank" rel="noopener" aria-label="Instagram" class="fsocial__link">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm5 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm7-1.2a1.2 1.2 0 1 0-2.4 0 1.2 1.2 0 0 0 2.4 0Z"/></svg>
+          </a>
+          <a href="mailto:hello@customwear.uz" aria-label="Email" class="fsocial__link">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5L4 8V6l8 5 8-5v2Z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Навигация -->
+      <nav class="fnav reveal" data-reveal="up" style="--reveal-delay:80ms" aria-label="Навигация по сайту">
+        <h3 class="fnav__title">Навигация</h3>
+        <ul class="fnav__list">
+          <li><a href="#builder">Конструктор</a></li>
+          <li><a href="#gallery">Наши работы</a></li>
+          <li><a href="#process">Как заказать</a></li>
+          <li><a href="#about">Почему мы</a></li>
+        </ul>
+      </nav>
+
+      <!-- Поддержка -->
+      <nav class="fnav reveal" data-reveal="up" style="--reveal-delay:120ms" aria-label="Поддержка">
+        <h3 class="fnav__title">Поддержка</h3>
+        <ul class="fnav__list">
+          <li><a href="#contacts">Контакты</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Политика конфиденциальности</a></li>
+          <li><a href="#">Условия сервиса</a></li>
+        </ul>
+      </nav>
+
+      <!-- Подписка -->
+      <div class="fnews reveal" data-reveal="up" style="--reveal-delay:160ms">
+        <h3 class="fnews__title">Скидки и новости</h3>
+        <p class="fnews__text">Редко пишем, только полезное.</p>
+        <form id="fnews" class="fnews__form" novalidate>
+          <label class="visually-hidden" for="fnews-email">Ваш email</label>
+          <input id="fnews-email" class="fnews__input" type="email" name="email" placeholder="you@example.com" required />
+          <button class="fnews__btn" type="submit">Подписаться</button>
+          <p class="fnews__hint" id="fnews-hint" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p class="copy">© <span id="year"></span> CustomWear. Все права защищены.</p>
+      <p class="made">Сделано с заботой о деталях.</p>
+    </div>
+  </div>
+</footer>
+
 
   <!-- Скрипты -->
   <script src="app.js"></script>
