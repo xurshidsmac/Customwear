@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CustomWear — Создай свой дизайн</title>
+
+  <!-- Шрифты -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Стили -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- ================= HEADER / NAVBAR ================= -->
+  <header class="xnav" role="banner" aria-label="Главная навигация">
+    <div class="xnav__in">
+      <!-- ЛОГО -->
+      <a href="/" class="xnav__brand" aria-label="CustomWear — на главную">
+        <span class="xnav__mark">CW</span>
+        <span class="xnav__name">CustomWear</span>
+      </a>
+
+      <!-- НАВИГАЦИЯ (десктоп) -->
+      <nav class="xnav__menu" aria-label="Разделы сайта">
+        <a href="#about" class="xnav__link">О продукте</a>
+        <a href="#builder" class="xnav__link">Конструктор</a>
+        <a href="#gallery" class="xnav__link">Галерея</a>
+        <a href="#contacts" class="xnav__link">Контакты</a>
+      </nav>
+
+      <!-- CTA -->
+      <a href="#builder" class="xnav__cta">Создать дизайн</a>
+
+      <!-- БУРГЕР (кнопка) -->
+      <button id="burgerBtn" class="xnav__burger" aria-label="Открыть меню" aria-controls="mnav" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+
+    <!-- МОБИЛЬНОЕ МЕНЮ (фуллскрин оверлей) -->
+    <nav id="mnav" class="mnav" aria-label="Мобильное меню" hidden>
+      <div class="mnav__backdrop" data-close></div>
+
+      <div class="mnav__panel" role="dialog" aria-modal="true">
+        <div class="mnav__head">
+          <a href="/" class="xnav__brand" aria-label="CustomWear — на главную">
+            <span class="xnav__mark">CW</span>
+            <span class="xnav__name">CustomWear</span>
+          </a>
+          <button class="mnav__close" aria-label="Закрыть меню" data-close>
+            <span class="mnav__close-x"></span>
+          </button>
+        </div>
+
+        <div class="mnav__body">
+          <a href="#about" class="mnav__link">О продукте</a>
+          <a href="#builder" class="mnav__link">Конструктор</a>
+          <a href="#gallery" class="mnav__link">Галерея</a>
+          <a href="#contacts" class="mnav__link">Контакты</a>
+          <a href="#builder" class="mnav__cta">Создать дизайн</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ================= MAIN ================= -->
+  <main id="main">
+    <!-- Hero-заглушка (добавим позже отдельной частью) -->
+    <section id="hero" style="min-height:56vh; display:grid; place-items:center; padding:48px 18px;">
+      <div style="max-width:960px; text-align:center;">
+        <h1 style="margin:0 0 12px; font-size:clamp(28px,4vw,44px); line-height:1.15;">Создай то, что хочешь носить</h1>
+        <p style="margin:0 0 18px; font-size:clamp(16px,2vw,18px); opacity:.8;">Печать премиум-качества на футболках и худи. Просто. Красиво. Локальное производство.</p>
+        <a class="xnav__cta" href="#builder">Начать</a>
+      </div>
+    </section>
+
+    <!-- Разделы-заглушки, чтобы проверить навигацию -->
+    <section id="about" style="padding:80px 18px;">
+      <div style="max-width:1100px; margin:0 auto;">
+        <h2 style="margin:0 0 16px;">О продукте</h2>
+        <p>Короткое описание преимуществ. Этот блок заменим полноценной секцией позже.</p>
+      </div>
+    </section>
+
+    <section id="builder" style="padding:80px 18px;">
+      <div style="max-width:1100px; margin:0 auto;">
+        <h2 style="margin:0 16px 16px 0;">Конструктор</h2>
+        <p>Здесь будет интерактивный превью/видео-демо и кнопка перехода в конструктор.</p>
+      </div>
+    </section>
+
+    <section id="gallery" style="padding:80px 18px;">
+      <div style="max-width:1100px; margin:0 auto;">
+        <h2 style="margin:0 0 16px;">Галерея</h2>
+        <p>Сетка работ клиентов/превью принтов. Секция будет оформлена отдельными стилями.</p>
+      </div>
+    </section>
+
+    <section id="contacts" style="padding:80px 18px;">
+      <div style="max-width:1100px; margin:0 auto;">
+        <h2 style="margin:0 0 16px;">Контакты</h2>
+        <ul style="list-style:none; padding:0; margin:0;">
+          <li>Email: <a href="mailto:hello@customwear.uz">hello@customwear.uz</a></li>
+          <li>Telegram: <a href="https://t.me/customwear" target="_blank" rel="noopener">t.me/customwear</a></li>
+          <li>Instagram: <a href="#" target="_blank" rel="noopener">@customwear</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer style="padding:28px 18px; border-top:1px solid rgba(0,0,0,.06);">
+    <div style="max-width:1100px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+      <span>&copy; <span id="y"></span> CustomWear</span>
+      <nav aria-label="Политики">
+        <a href="#" style="margin-right:12px; text-decoration:none;">Политика конфиденциальности</a>
+        <a href="#" style="text-decoration:none;">Условия сервиса</a>
+      </nav>
+    </div>
+    <script>
+      document.getElementById('y').textContent = new Date().getFullYear();
+    </script>
+  </footer>
+
+  <!-- Скрипты -->
+  <script src="app.js"></script>
+</body>
+</html>
